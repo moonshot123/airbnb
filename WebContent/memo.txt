@@ -1,0 +1,304 @@
+
+
+
+drop sequence memseq ;
+create sequence memseq nocache ;
+
+
+drop table members purge ;
+create table members(
+	h_num number primary key,
+	h_id varchar2(15),
+	h_name varchar2(15) ,
+	h_password varchar2(15),
+	h_password_check varchar2(15),
+	h_email varchar2(20)
+);
+
+
+insert into members(h_num,h_id, h_name, h_password, h_password_check, h_email) 
+values(memseq.nextval,'aaa' ,'홍길동', 'abc123', 'abc123', 'abc@naver.com') ;
+
+insert into members(h_num,h_id, h_name, h_password, h_password_check, h_email) 
+values(memseq.nextval,'bbb', '아이우', 'abc321', 'abc321', '123@naver.com') ;
+
+col h_num for 999;
+col h_id for a10;
+col h_name for a15;
+col h_password for a10; 
+col h_password_check for a10;
+col h_email for a10;
+
+commit;
+
+select * from members;
+
+
+
+
+
+drop sequence sukseq ;
+create sequence sukseq nocache ;
+
+
+drop table sukso purge ;
+create table sukso(
+	s_num number primary key,
+	s_id varchar2(15),
+	s_name varchar2(15) ,
+	s_place varchar2(15),
+	s_price number,
+	s_score number,
+	s_images varchar2(15),
+	s_story varchar2(100)
+);
+
+	
+
+
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'a1' ,'아이유', '강남', 100000, 8 ,'suk1.jpg','강남지역에 최신시설로 리모델링된 멋진 한옥집 입니다') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'b1' ,'박정만', '건대', 40000, 6 ,'suk2.jpg','건대역에서 도보로 5분거리에 있습니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'c1' ,'김경석', '신촌', 80000, 7 ,'suk3.jpg','최고급 럭셔리 하우스입니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'d1' ,'조은주', '종로', 90000, 9 ,'suk4.jpg','북촌마을에서 하루밤을 보내세요.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'e1' ,'홍길동', '강남', 55000, 5 ,'suk5.jpg','논현역에서 도보로 3분거리에 있습니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'f1' ,'이철구', '노원', 70000, 6 ,'suk6.jpg','주인이 너무 친절합니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'g1' ,'김성규', '신촌', 60000, 8 ,'suk7.jpg','저렴한 가격에 안락한 침실을 제공합니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'h1' ,'최성만', '건대', 50000, 9 ,'suk8.jpg','넓고 쾌적한 거실을 제공합니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'i1' ,'김지은', '노원', 150000, 10 ,'suk9.jpg','안락한 침실을 제공합니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'j1' ,'오민지', '종로', 80000, 8 ,'suk10.jpg','종각역에서 도보로 3분거리입니다.') ;
+
+
+
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'a2' ,'이지민', '강남', 100000, 8 ,'suk11.jpg','강남지역에 최신시설로 리모델링된 멋진 한옥집 입니다') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'b2' ,'김정후', '신촌', 40000, 4 ,'suk12.jpg','건대역에서 도보로 5분거리에 있습니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'c2' ,'조규만', '신촌', 110000, 7 ,'suk13.jpg','최고급 럭셔리 하우스입니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'d2' ,'조연성', '종로', 90000, 9 ,'suk14.jpg','북촌마을에서 하루밤을 보내세요.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'e2' ,'박길만', '강남', 50000, 5 ,'suk15.jpg','논현역에서 도보로 3분거리에 있습니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'f2' ,'조정팔', '노원', 75000, 6 ,'suk16.jpg','주인이 너무 친절합니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'g2' ,'최연화', '신촌', 60000, 8 ,'suk17.jpg','저렴한 가격에 안락한 침실을 제공합니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'h2' ,'김소영', '건대', 50000, 9 ,'suk18.jpg','넓고 쾌적한 거실을 제공합니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'i2' ,'김철성', '노원', 100000, 10 ,'suk19.jpg','안락한 침실을 제공합니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'j2' ,'박만수', '종로', 80000, 8 ,'suk20.jpg','종각역에서 도보로 3분거리입니다.') ;
+
+
+
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'a3' ,'최철수', '강남', 100000, 8 ,'suk21.jpg','강남지역에 최신시설로 리모델링된 멋진 한옥집 입니다') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'b3' ,'임정화', '건대', 40000, 4 ,'suk22.jpg','건대역에서 도보로 5분거리에 있습니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'c3' ,'고동수', '신촌', 80000, 7 ,'suk23.jpg','최고급 럭셔리 하우스입니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'d3' ,'박만규', '종로', 90000, 9 ,'suk24.jpg','북촌마을에서 하루밤을 보내세요.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'e3' ,'김길성', '강남', 50000, 5 ,'suk25.jpg','논현역에서 도보로 3분거리에 있습니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'f3' ,'김정은', '노원', 70000, 6 ,'suk26.jpg','주인이 너무 친절합니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'g3' ,'트롬푸', '신촌', 60000, 9 ,'suk27.jpg','저렴한 가격에 안락한 침실을 제공합니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'h3' ,'시진핑', '건대', 50000, 4 ,'suk28.jpg','넓고 쾌적한 거실을 제공합니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'i3' ,'아베', '노원', 120000, 3 ,'suk29.jpg','안락한 침실을 제공합니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'j3' ,'푸틴', '종로', 85000, 8 ,'suk30.jpg','종각역에서 도보로 3분거리입니다.') ;
+
+
+
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'a4' ,'마크롱', '강남', 110000, 8 ,'suk31.jpg','강남지역에 최신시설로 리모델링된 멋진 한옥집 입니다') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'b4' ,'메이', '건대', 40000, 4 ,'suk32.jpg','건대역에서 도보로 5분거리에 있습니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'c4' ,'반기문', '신촌', 80000, 7 ,'suk33.jpg','최고급 럭셔리 하우스입니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'d4' ,'이상규', '종로', 90000, 9 ,'suk34.jpg','북촌마을에서 하루밤을 보내세요.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'e4' ,'이미소', '강남', 50000, 5 ,'suk35.jpg','논현역에서 도보로 3분거리에 있습니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'f4' ,'김소라', '노원', 70000, 6 ,'suk36.jpg','주인이 너무 친절합니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'g4' ,'클린턴', '신촌', 130000, 9 ,'suk37.jpg','저렴한 가격에 안락한 침실을 제공합니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'h4' ,'오바마', '건대', 50000, 4 ,'suk38.jpg','넓고 쾌적한 거실을 제공합니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'i4' ,'박철만', '강남', 100000, 3 ,'suk39.jpg','안락한 침실을 제공합니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'j4' ,'김길성', '종로', 85000, 8 ,'suk40.jpg','종각역에서 도보로 3분거리입니다.') ;
+
+
+
+
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'a5' ,'김소민', '강남', 100000, 8 ,'suk41.jpg','강남지역에 최신시설로 리모델링된 멋진 한옥집 입니다') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'b5' ,'김만수', '건대', 30000, 4 ,'suk42.jpg','건대역에서 도보로 5분거리에 있습니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'c5' ,'김호성', '신촌', 85000, 7 ,'suk43.jpg','최고급 럭셔리 하우스입니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'d5' ,'조상민', '종로', 90000, 9 ,'suk44.jpg','북촌마을에서 하루밤을 보내세요.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'e5' ,'최소라', '강남', 50000, 5 ,'suk45.jpg','논현역에서 도보로 3분거리에 있습니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'f5' ,'임예빈', '강남', 70000, 6 ,'suk46.jpg','주인이 너무 친절합니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'g5' ,'최형규', '신촌', 65000, 9 ,'suk47.jpg','저렴한 가격에 안락한 침실을 제공합니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'h5' ,'박철후', '건대', 30000, 4 ,'suk48.jpg','넓고 쾌적한 거실을 제공합니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'i5' ,'양민지', '노원', 100000, 3 ,'suk49.jpg','안락한 침실을 제공합니다.') ;
+
+insert into sukso(s_num,s_id,s_name,s_place,s_price,s_score,s_images,s_story ) 
+values(sukseq.nextval,'j5' ,'양현준', '종로', 80000, 8 ,'suk50.jpg','종각역에서 도보로 3분거리입니다.') ;
+
+
+
+
+col s_num for 999;
+col s_id for a10;
+col s_name for a10;
+col s_place for a10;
+col s_price for 9999999;
+col s_score for 999;
+col s_images for a10;
+col s_story for a10;
+
+commit;
+
+select * from sukso;
+
+
+
+
+
+
+
+drop sequence reseq ;
+create sequence reseq nocache ;
+
+
+drop table reservation purge;
+create table reservation(
+	r_num number primary key,
+	rh_id varchar2(15),
+	rs_id varchar2(15),
+	rs_date date default sysdate,
+	re_date date default sysdate
+);
+
+
+col r_num for 9999;
+col rh_id for a15;
+col rs_id for a15;
+col rs_date for a20;
+col re_date for a20;
+
+
+commit;
+
+select * from reservation;
+
+
+
+
+
+drop sequence postseq ;
+create sequence postseq nocache ;
+
+drop table post purge ;
+create table post (
+	p_num number primary key,
+	ph_id varchar2(15),
+	ps_id varchar2(15),
+	p_time date default sysdate,
+	p_post varchar2(50) 
+);
+
+
+
+
+insert into post(p_num,ph_id,ps_id,p_time,p_post) 
+values(postseq.nextval,'aaa' ,'a1', to_date('2017/7/22'),'너무 친절하네요. 천사같아요.') ;
+
+
+col p_num for 9999;
+col ph_id for a10;
+col ps_id for a10;
+col p_time for a20;
+col p_post for a30;
+
+commit;
+
+select * from post;
+
+
+

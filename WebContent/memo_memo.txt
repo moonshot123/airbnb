@@ -1,0 +1,33 @@
+AIzaSyBo-qTAYy9OGp0DDt841veYvJ5Ga5ntyR0  구글맵,키값
+
+현재 문제점
+
+스마트에디터??? 나중에 한번 써보자 네이버오픈소스인듯
+
+9. 관리자 모드는 없음
+
+12. 메인에 검색페이지 버튼 넣고 (디자인쪽은 잘 모르겠음 ㅜㅜ 그냥 대퉁하도록 하자)
+
+14. 날자 파일이 나오기는 하지만 계산 방법을 잘 모르겠다.???
+
+15. 지도는 어쩔수없이 스크립트에 넣어서 만들었다. 나중에는 서버에 넣어서 만들자.
+
+ 테마색 #ff5a60 color RGB value is (255,90,96) 
+
+( 테이블에서 바로 데이터 넣을때 commit; 을 안함... 이런건진짜 틀리지말자 ) 아직 기본이 안되어 있따.
+=======================================
+
+
+======== 테이블조인 -회원예약순서와 간단한 정보(사진, 1박가격) 날짜를 기준으로 하여 몇일정도 있는지 알고 총가격을 나타내려고 만듬
+
+select h_id,r_num,s_images,s_price,rs_date,re_date from members 
+inner join reservation on members.h_id=reservation.rh_id 
+inner join sukso on sukso.s_id=reservation.rs_id;
+
+
+select * from reservation where datediff(day,RS_DATE,RE_DATE); 
+
+
+
+insert into reservation(r_num,rh_id,rs_id,rs_date,re_date) values(reseq.nextval,'고객' ,'제공',('2017/07/22'),('2017/07/28')) ;
+
